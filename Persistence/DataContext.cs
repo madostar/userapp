@@ -14,6 +14,6 @@ namespace Persistence
         }
 
         public DbSet<Activity> Activities { get; set; }
-        public DbSet<UserList> UserLists { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

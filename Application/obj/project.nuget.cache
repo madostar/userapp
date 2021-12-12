@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qRBGWplvmzxvAsnnKvm7CMEQ0CD1ZC3Gr7HaiA+bmEb6T6NBVi6m2mDhF1wk0cyIwJbiPnSeHks8RF+s86k4tQ==",
+  "dgSpecHash": "EYhtnOl2LLUsSL9Afg/ZX5HG6ONLBuOx9XA3FI43nPcJ5s2KqvZa++sZxVjebxJEE2aZWEmUck2hfzd5QP847w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madostar\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.0\\microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
     "C:\\Users\\Madostar\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",

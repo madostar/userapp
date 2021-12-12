@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\API\\API.csproj": {}
+    "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\API\\API.csproj": {
+    "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Madostar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\API\\obj\\",
+        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Madostar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\Application.csproj"
+              "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\Application.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\Application.csproj": {
+    "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Madostar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Application\\obj\\",
+        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Madostar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -101,11 +101,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj"
+              "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Persistence\\Persistence.csproj"
+              "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj": {
+    "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Madostar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Madostar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -190,14 +190,14 @@
         }
       }
     },
-    "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Persistence\\Persistence.csproj",
+        "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\Madostar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Persistence\\obj\\",
+        "outputPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Madostar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -212,8 +212,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj"
+              "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj"
               }
             }
           }

@@ -27,7 +27,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserLists",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -39,7 +39,7 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserLists", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
         }
 
@@ -49,7 +49,7 @@ namespace Persistence.Migrations
                 name: "Activities");
 
             migrationBuilder.DropTable(
-                name: "UserLists");
+                name: "Users");
         }
     }
 }

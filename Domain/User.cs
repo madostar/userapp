@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class UserList
+    public class User
     {
         public Guid Id { get; set; }
         public string Username { get; set; }

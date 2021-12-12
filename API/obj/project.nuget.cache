@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TDliwPYIGqzuh54A18S3eme1fMP/JuBm9+FDqW58+eHWwqTj3NZdxN0dYl0bYoLAWJAhtr142JZPBj5Pzh+xng==",
+  "dgSpecHash": "2tiDrCT+QQMpFsnFrJRE4ndG7Pr6eHy9ig84A6Zsu6BqQYJKtE1wExAMFtlTr9mn7ymU6AV5XSsnlK61lL9M+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Madostar\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Madostar\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.0\\microsoft.data.sqlite.core.6.0.0.nupkg.sha512",

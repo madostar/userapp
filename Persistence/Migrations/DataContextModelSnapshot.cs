@@ -46,7 +46,7 @@ namespace Persistence.Migrations
                     b.ToTable("Activities");
                 });
 
-            modelBuilder.Entity("Domain.UserList", b =>
+            modelBuilder.Entity("Domain.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,15 +61,15 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("LastLogin")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("lastName")
+                    b.Property<string>("Username")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserLists");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
