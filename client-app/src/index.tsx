@@ -4,24 +4,32 @@ import { render } from "react-dom";
 import './app/layout/index.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NewUser from './feautures/userform/newuser';
+import $ from "jquery"
+import EditUser from './feautures/userform/edituser';
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('root')
-);
+
+// ReactDOM.render(
+//     <App />,
+//   document.getElementById('root')
+// );
 
 const rootElement = document.getElementById("root");
 render(
-  <BrowserRouter>
-    {/* <App/> */}
+  <React.StrictMode>
+    <Router>
+      {/* <App/> */}
 
-     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/newuser" element={<NewUser />} />
-    </Routes>
-  </BrowserRouter>,
+      <Routes>
+        <Route path="/" element={<App />} / >
+        <Route path="newuser" element={<NewUser />} />
+        <Route path="edituser/:userid" element={<EditUser />} >
+          {/* <Route path=":userid" element={<EditUser />}/> */}
+        </Route>
+      </Routes>
+    </Router>
+  </React.StrictMode>,
   rootElement
 );
 

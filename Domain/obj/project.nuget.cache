@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fxYoaQehW32k9DSlBc+sJoL8eCX/i9PNkYUys6IZDXChyMgFGNpYL5hw15XGnThK6q4R7H+bDamXL1m2qKt1eA==",
+  "dgSpecHash": "lFVmbdNVu9kaC5iS/99C/2BhMn7gbxTjsClyfLnT/ZGIFRyHDqh0ZTiuNNkFeF9B/vaiGLPfOEKrhTSUwsaYUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Madostar\\Documents\\GitHub\\UserApp\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Madostar\\Documents\\GitHub\\userapp\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
