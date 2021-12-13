@@ -1,50 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Persistence;
-using System.Net.Http;
-
+using MediatR;
+using Application.Users;
 
 namespace API.Controllers
 {
     public class UsersController : BaseApiController
     {
-        private readonly DataContext _context;
-        public UsersController(DataContext context)
-        {
-            _context = context;
-        }
 
-        [HttpPost]
-        public HttpResponseMessage AddUser(string username, string firstName, string lastName, bool enabled, string startDate){
-             try{ 
-                 return new HttpResponseMessage(HttpStatusCode.OK);
-            }
-            catch (Exception ex)
-            {
-                // Log.Error("Something has gone wrong ", ex);
-                return new HttpResponseMessage(HttpStatusCode.NotFound);
-                // throw;
-            }
-            // finally
-            // {
-            //     ((IDisposable)client).Dispose();
-            // }
-            
 
-            
-        }
         
 
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await Mediator.Send(new List.Query());
         }
 
         [HttpGet("{id}")]
@@ -52,12 +23,25 @@ namespace API.Controllers
         {
             try
             {
-                return await _context.Users.FindAsync(id); 
+                return await Mediator.Send(new Details.Query{Id = id});
             }
             catch (System.Exception)
             {
                 throw;
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(User user)
+        {
+            return Ok(await Mediator.Send(new Create.Command {User = user}));
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> EditUser(Guid id, User user)
+        {
+            user.Id = id;
+            return Ok(await Mediator.Send(new Edit.Command {User = user}));
         }
 
     }

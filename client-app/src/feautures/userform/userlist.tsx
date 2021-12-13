@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { GridFilterChangeEvent, Grid, GridColumn} from "@progress/kendo-react-grid";
 import { User } from "../../app/models/User";
-import { CompositeFilterDescriptor, filterBy } from "@progress/kendo-data-query";
+import { CompositeFilterDescriptor, filterBy, process } from "@progress/kendo-data-query";
 import axios from "axios";
 import { Link, NavLink } from "react-router-dom";
 
@@ -24,23 +24,24 @@ export default function UserList({users}: Props){
     
     return(
         <Grid
-          style={{background: "blue", maxWidth:"75%"}}
+          style={{ maxWidth:"75%"}}
           data={filterBy(users, filter)}
+          pageable={true}
           sortable={true}
           filterable={true}
           filter={filter}
           onFilterChange={(e: GridFilterChangeEvent) => setFilter(e.filter)}
           >
-          <GridColumn field="Username" title='Username'/>
-          <GridColumn field="FullName" title='Full Name' filterable={false}/>
-          <GridColumn field="LastLogin" title='Last Login' filterable={false}/>
-          <GridColumn field="Enabled" filterable={false}/>
+          <GridColumn field="username" title='Username'/>
+          <GridColumn field="fullName" title='Full Name' filterable={false}/>
+          <GridColumn field="lastLogin" title='Last Login' filterable={false}/>
+          <GridColumn field="enabled" title='Enabled' filterable={false}/>
           <GridColumn
             field="Edit user info"
             filterable={false}
-            cell={() => (
-              <td>
-                {users.map(user => (<NavLink style={{color: "white", background: "#ff6358", textDecoration: "none", padding:"5px"}} to={`/invoices/${user.id}`}>Edit</NavLink>))}
+            cell={(props) => (
+              <td style={{textAlign: "center"}}>
+                <NavLink style={{color: "white", background: "#ff6358", textDecoration: "none", padding:"5px"}} to={`/edituser/${users[props.dataIndex].username}`}>Edit</NavLink>
               </td>
             )}
           />

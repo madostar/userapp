@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NewUser from './feautures/userform/newuser';
 import $ from "jquery"
 import EditUser from './feautures/userform/edituser';
+import NotFound from './feautures/home/notfound';
 
 
 // ReactDOM.render(
@@ -22,9 +23,12 @@ render(
       {/* <App/> */}
 
       <Routes>
+        
         <Route path="/" element={<App />} / >
+        <Route path='*' element={<NotFound />}/>
+        
         <Route path="newuser" element={<NewUser />} />
-        <Route path="edituser/:userid" element={<EditUser />} >
+        <Route path="edituser/:username" element={<EditUser/>} >
           {/* <Route path=":userid" element={<EditUser />}/> */}
         </Route>
       </Routes>

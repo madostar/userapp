@@ -1,5 +1,6 @@
 import React from "react";
 import './../../App.css';
+import { useParams } from "react-router-dom";
 import {
     Form,
     Field,
@@ -45,6 +46,9 @@ const UserameInput = (fieldRenderProps: FieldRenderProps) => {
 
 export default function EditUser()
 {
+
+    let params = useParams();
+    let usern = params.username;
     const handleSubmit = (user: { [name: string]: User }) =>
     alert(JSON.stringify(user, null, 2));
     
@@ -64,7 +68,7 @@ export default function EditUser()
               <Field
                name={"username"}
                component={UserameInput}
-               label={"Username"}
+               label={usern}
                validator={usernameValidator}
               />
             </div>
@@ -99,6 +103,7 @@ export default function EditUser()
             <button
               type={"submit"}
               className="k-button"
+              style={{color:"white", background:"green"}}
               disabled={!formRenderProps.allowSubmit}
             >
               Update User

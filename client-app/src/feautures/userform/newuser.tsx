@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './../../App.css';
 import {
     Form,
@@ -10,6 +10,15 @@ import {
 import { Error } from "@progress/kendo-react-labels";
 import { Input } from "@progress/kendo-react-inputs";
 import { User } from "../../app/models/User";
+import agent from "../../app/api/agent";
+import {v4 as uuid} from "uuid";
+import { Navigate, useRoutes } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
+
+interface Props{
+  user: User | undefined;
+}
+
 
 //each has max. 25 characters and must start with capital
 const nameRegex: RegExp = new RegExp(/([A-Z]{1})+([a-z]{1,24})/);
@@ -88,27 +97,20 @@ const UsernameInput = (fieldRenderProps: FieldRenderProps) => {
 
 export default function NewUser()
 {
-    const handleSubmit = (user: { [name: string]: User }) =>{
+
+    
+    const [submitting, setSubmitting] = useState(false);
+    
+    const handleSubmit = (user: any ) =>{
       // alert(JSON.stringify(user, null, 2));
       console.log(user);
-
-      let firstName = user.firstName,
-          lastName = user.lastName,
-          username = user.username,
-          lastlogin = new Date(),
-          enabled = user.enabled;
+      setSubmitting(true);
+      user.id = uuid()
+      user.lastLogin = new Date();
+      agent.Users.create(user).then(() => {
+        setSubmitting(false);
+      })
       
-      $.ajax({
-          method: "POST",
-          url: 'http://localhost:5000/api/users',
-          data: { username: username , firstname: firstName, lastname: lastName, lastLogin: lastlogin, enabled: enabled},
-          success: function(response){
-              console.log(response);
-          },
-          error: function(xhr, status, error){
-              console.error(xhr);
-          }
-      });
             
   
     }
@@ -150,7 +152,7 @@ export default function NewUser()
               />
             </div>
 
-            <div style={{margin:"3em 0", color:"white"}} className="check">
+            <div style={{margin:"2em 0", color:"white"}} className="check">
               <Field
                 name={"enabled"}
                 label={"Please check this box to enable."}
@@ -159,10 +161,11 @@ export default function NewUser()
             </div>
 
           </fieldset>
-          <div style={{justifyContent:"center", marginBottom:"3em"}} className="k-form-buttons">
+          <div style={{justifyContent:"center", marginBottom:"2em"}} className="k-form-buttons">
             <button
               type={"submit"}
               className="k-button"
+              style={{color:"white", background:"green"}}
               disabled={!formRenderProps.allowSubmit}
             >
               Create User
