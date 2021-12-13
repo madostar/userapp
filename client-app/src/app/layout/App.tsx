@@ -1,68 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '@progress/kendo-theme-default/dist/all.css';
 import './../../App.css';
-import { User } from '../models/User';
-import HomePage from '../../feautures/home/homepage';
-import UserList from '../../feautures/userform/userlist';
-import agent from '../api/agent';
+import { useStore } from '../stores/store';
+import { observer } from 'mobx-react-lite';
 import LoadingComponent from './loadingcomponent';
+import { Link } from 'react-router-dom';
+import UserList from '../../feautures/userform/userlist';
 
 function App() {
 
-  //retrieving data from the API
-  const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
+  const {userStore} = useStore();
 
-  
   useEffect(() => {
-    let isMounted = true;
-    
-    //fetching from api with delay 1 sec
-    
-      agent.Users.list().then(response => {
-        var data = response;
+    userStore.loadUsers();
+  }, [userStore])
 
-        //a list of fixed data from the api to fit the grid
-        var modified : any = [];
-
-        //pushing fixed data from the api to the list
-        for (let i = 0; i < data.length; i++) {
-        modified.push({
-            username: data[i].username,
-            fullName: (data[i].firstName + " " + data[i].lastName),
-            lastLogin: (
-            new Date(
-              data[i].lastLogin).getFullYear() +
-               "-" + new Date(data[i].lastLogin).getMonth() +
-                "-" + new Date(data[i].lastLogin).getDay() +
-                 " " + ((new Date(data[i].lastLogin).getHours()+"").length<2?"0":"")+ new Date(data[i].lastLogin).getHours() +
-                  ":" + ((new Date(data[i].lastLogin).getMinutes()+"").length<2?"0":"") + new Date(data[i].lastLogin).getMinutes()
-            ),
-            enabled: (data[i].enabled?"Yes" : "No")
-        });
-        
-        }
-        if (isMounted){
-           setUsers(modified);
-           setLoading(false);
-        }
-    
-    })
-    return () => { isMounted = false };
-  }, [])
-
-  if(loading) return(<LoadingComponent/>);
-
+  if(userStore.loadingInitial) return(<LoadingComponent/>);
+  
   return (
     <div className="App">
       <header className="App-header">
-        <HomePage/>
-        {/* <Link to={"/newuser"}>New User</Link> */}
-        <br />
-        <UserList users={users}/>
+        <h1>Welcome to the User List</h1>
+        <p>To add a new user, please click the following button</p>
+        <Link style={{color: "white", background: "#ff6358", textDecoration: "none",borderRadius:"5px", padding:"7px",fontSize:"0.75em"}} to="/newuser">Add New User</Link>
+        <br/>
+            <small>Please refresh page if you don't see changes <br />or double lists after updating a user <br />(Sorry for the inconvinience)</small>
+        <br/>
+        <UserList users={userStore.modified}/>
       </header>
     </div>
   );
 }
 
-export default App;
+export default observer(App);

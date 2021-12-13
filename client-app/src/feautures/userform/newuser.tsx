@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './../../App.css';
 import {
     Form,
@@ -9,15 +9,10 @@ import {
   } from "@progress/kendo-react-form";
 import { Error } from "@progress/kendo-react-labels";
 import { Input } from "@progress/kendo-react-inputs";
-import { User } from "../../app/models/User";
 import agent from "../../app/api/agent";
 import {v4 as uuid} from "uuid";
-import { Navigate, useRoutes } from 'react-router-dom';
-import { createBrowserHistory } from 'history'
-
-interface Props{
-  user: User | undefined;
-}
+import { useNavigate } from 'react-router-dom';
+import { useStore } from "../../app/stores/store";
 
 
 //each has max. 25 characters and must start with capital
@@ -98,19 +93,21 @@ const UsernameInput = (fieldRenderProps: FieldRenderProps) => {
 export default function NewUser()
 {
 
+    const navigate = useNavigate();
     
-    const [submitting, setSubmitting] = useState(false);
-    
+    const {userStore} = useStore();
+
     const handleSubmit = (user: any ) =>{
-      // alert(JSON.stringify(user, null, 2));
-      console.log(user);
-      setSubmitting(true);
-      user.id = uuid()
-      user.lastLogin = new Date();
-      agent.Users.create(user).then(() => {
-        setSubmitting(false);
-      })
-      
+      if(userStore.checkUsername(user.username)){
+        alert("This username already exist")
+      }
+      else{
+        user.id = uuid()
+        user.lastLogin = new Date();
+        agent.Users.create(user).then(() => {
+          navigate("/");
+        })
+      }
             
   
     }
@@ -129,6 +126,7 @@ export default function NewUser()
             </legend>
             <div className="mb-3">
               <Field
+              
                name={"username"}
                component={UsernameInput}
                label={"Username"}

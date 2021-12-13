@@ -1,39 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from "react-dom";
 import './app/layout/index.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NewUser from './feautures/userform/newuser';
-import $ from "jquery"
-import EditUser from './feautures/userform/edituser';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NotFound from './feautures/home/notfound';
-
-
-// ReactDOM.render(
-//     <App />,
-//   document.getElementById('root')
-// );
+import NewUser from './feautures/userform/newuser';
+import EditUser from './feautures/userform/edituser';
+import { StoreContext, store } from './app/stores/store';
 
 const rootElement = document.getElementById("root");
-render(
-  <React.StrictMode>
+ReactDOM.render(
+  <StoreContext.Provider value={store}>
     <Router>
       {/* <App/> */}
-
       <Routes>
-        
-        <Route path="/" element={<App />} / >
-        <Route path='*' element={<NotFound />}/>
-        
-        <Route path="newuser" element={<NewUser />} />
-        <Route path="edituser/:username" element={<EditUser/>} >
-          {/* <Route path=":userid" element={<EditUser />}/> */}
-        </Route>
-      </Routes>
+              <Route path="/" element={<App />} / >
+              <Route path='*' element={<NotFound />}/>
+              
+              <Route path="newuser" element={<NewUser />} />
+              <Route path="edituser/:userid" element={<EditUser/>} >
+              {/* <Route path='edituser/*' element={<NotFound />}/> */}
+                {/* <Route path=":userid" element={<EditUser />}/> */}
+              </Route>
+            </Routes>
     </Router>
-  </React.StrictMode>,
+  </StoreContext.Provider>
+ ,
   rootElement
 );
 

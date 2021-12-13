@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader, LoaderType } from "@progress/kendo-react-indicators";
+import { Loader } from "@progress/kendo-react-indicators";
 
 
 
